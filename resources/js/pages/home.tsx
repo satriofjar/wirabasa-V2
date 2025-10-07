@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Head, usePage } from "@inertiajs/react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -19,6 +19,7 @@ import Wave from "@/../assets/wave.svg"
 import Profile from "@/../assets/user.png";
 
 const Home = () => {
+    const [showAlert, setShowAlert] = useState(true);
     const benefits = [
         {
             img: Certificate,
@@ -89,19 +90,23 @@ const Home = () => {
             },
         ],
     };
-    const { url } = usePage();
 
-    // Scroll ke atas saat di halaman home tanpa hash
-    // useEffect(() => {
-    //     if (url === "/") {
-    //         window.scrollTo({ top: 0, behavior: "smooth" });
-    //     }
-    // }, [url]);
 
     return (
         <React.Fragment>
 
-            <Head title="Beranda"/>
+            <Head title="Beranda" />
+
+            {showAlert && (
+                <div className="bg-red-200">
+                    <div className="max-w-7xl flex mx-auto px-4 sm:px-6 lg:px-8">
+                        <span className="mx-auto py-5 text-black">
+                            🚧 <strong>This website is a showcase version</strong> — some features may not work as intended.
+                        </span>
+                            <button type="button" onClick={() => setShowAlert(false)} className="text-black my-auto border-1 rounded-sm px-[5px] hover:border-2">X</button>
+                    </div>
+                </div>
+            )}
 
             <Navbar />
 
@@ -374,7 +379,7 @@ const Home = () => {
             </section>
 
             {/* Reading Test */}
-            <section id="sec-read" className="bg-no-repeat" style={{backgroundImage: `url(${Wave})`}}>
+            <section id="sec-read" className="bg-no-repeat" style={{ backgroundImage: `url(${Wave})` }}>
 
                 <div className="mb-16 mt-5 pt-15 ">
                     <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -411,7 +416,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <Footer/>
+            <Footer />
 
         </React.Fragment>
     );
