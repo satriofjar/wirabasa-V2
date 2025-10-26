@@ -145,3 +145,13 @@ export interface PaymentType {
     created_at: date;
     updated_at: date;
 }
+
+
+export interface TestimoniesType {
+    id: string;
+    name: string;
+    position: string;
+    message: string;
+    created_at: date;
+    updated_at: date;
+}

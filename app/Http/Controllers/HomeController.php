@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,7 +13,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-      return Inertia::render('home');
+        $testimonies = Testimonial::all();
+        return Inertia::render('home', [
+            'testimonies' => $testimonies,
+        ]);
     }
 
     /**

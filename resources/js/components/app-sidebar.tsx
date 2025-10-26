@@ -9,6 +9,7 @@ import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
 import AppLogo from './app-logo';
 import { index as categories } from '@/routes/categories';
 import { index as products } from '@/routes/products';
+import {index as testimony} from "@/routes/testimony";
 
 const mainNavItems: NavItem[] = [
     {
@@ -24,6 +25,11 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Products',
         href: products(),
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Testimonies',
+        href: testimony(),
         icon: LayoutGrid,
     },
 ];

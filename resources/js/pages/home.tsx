@@ -17,8 +17,9 @@ import ReadingBg from "@/../assets/reading-bg.png";
 import Quote from "@/../assets/icon-quote.png";
 import Wave from "@/../assets/wave.svg"
 import Profile from "@/../assets/user.png";
+import { TestimoniesType } from "@/types";
 
-const Home = () => {
+const Home = ({ testimonies }: { testimonies: TestimoniesType[] }) => {
     const [showAlert, setShowAlert] = useState(true);
     const benefits = [
         {
@@ -103,7 +104,7 @@ const Home = () => {
                         <span className="mx-auto py-5 text-black">
                             🚧 <strong>This website is a showcase version</strong> — some features may not work as intended.
                         </span>
-                            <button type="button" onClick={() => setShowAlert(false)} className="text-black my-auto border-1 rounded-sm px-[5px] hover:border-2">X</button>
+                        <button type="button" onClick={() => setShowAlert(false)} className="text-black my-auto border-1 rounded-sm px-[5px] hover:border-2">X</button>
                     </div>
                 </div>
             )}
@@ -263,80 +264,25 @@ const Home = () => {
                     <div className="mt-10">
                         <Slider {...settings}>
 
-                            {/* Card 1 */}
-                            <div className="bg-white relative shadow-md rounded-sm my-10 h-100 px-6 pt-3 pb-8 mx-auto max-w-[320px]">
-                                <div className="flex justify-end my-0 mb-5">
+                            {testimonies.map((testi) => (
+                                <div className="bg-white relative shadow-md rounded-sm my-10 h-100 px-6 pt-3 pb-8 mx-auto max-w-[320px]">
+                                    <div className="flex justify-end my-0 mb-5">
 
-                                    <img src={Quote} alt="" className="" />
-                                </div>
-                                <p className="text-gray-600 text-left mb-6">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry&apos;s standard dummy text.
-                                </p>
-                                <div className="flex absolute bottom-5">
-                                    <img src={Profile} alt="" className="rounded-full w-12 h-12" />
-                                    <div className="ml-3 text-left">
-                                        <h5 className="font-semibold text-gray-800">Summer Violet</h5>
-                                        <p className="text-sm text-gray-500">Marketing Juxt Corporate</p>
+                                        <img src={Quote} alt="" className="" />
+                                    </div>
+                                    <p className="text-gray-600 text-left mb-6">
+                                        {testi.message}
+                                    </p>
+                                    <div className="flex absolute bottom-5">
+                                        <img src={Profile} alt="" className="rounded-full w-12 h-12" />
+                                        <div className="ml-3 text-left">
+                                            <h5 className="font-semibold text-gray-800">{testi.name}</h5>
+                                            <p className="text-sm text-gray-500">{testi.position}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
 
-                            {/* Card 1 */}
-                            <div className="bg-white relative shadow-md rounded-sm my-10 h-100 px-6 pt-3 pb-8 mx-auto max-w-[320px]">
-                                <div className="flex justify-end my-0 mb-5">
-
-                                    <img src={Quote} alt="" className="" />
-                                </div>
-                                <p className="text-gray-600 text-left mb-6">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry&apos;s standard dummy text.
-                                </p>
-                                <div className="flex absolute bottom-5">
-                                    <div className="w-12 h-12 bg-gray-300 rounded-full" />
-                                    <div className="ml-3 text-left">
-                                        <h5 className="font-semibold text-gray-800">Summer Violet</h5>
-                                        <p className="text-sm text-gray-500">Marketing Juxt Corporate</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Card 1 */}
-                            <div className="bg-white relative shadow-md rounded-sm my-10 h-100 px-6 pt-3 pb-8 mx-auto max-w-[320px]">
-                                <div className="flex justify-end my-0 mb-5">
-
-                                    <img src={Quote} alt="" className="" />
-                                </div>
-                                <p className="text-gray-600 text-left mb-6">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry&apos;s standard dummy text.
-                                </p>
-                                <div className="flex absolute bottom-5">
-                                    <div className="w-12 h-12 bg-gray-300 rounded-full" />
-                                    <div className="ml-3 text-left">
-                                        <h5 className="font-semibold text-gray-800">Summer Violet</h5>
-                                        <p className="text-sm text-gray-500">Marketing Juxt Corporate</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Card 1 */}
-                            <div className="bg-white relative shadow-md rounded-sm my-10 h-100 px-6 pt-3 pb-8 mx-auto max-w-[320px]">
-                                <div className="flex justify-end my-0 mb-5">
-
-                                    <img src={Quote} alt="" className="" />
-                                </div>
-                                <p className="text-gray-600 text-left mb-6">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry&apos;s standard dummy text.
-                                </p>
-                                <div className="flex absolute bottom-5">
-                                    <div className="w-12 h-12 bg-gray-300 rounded-full" />
-                                    <div className="ml-3 text-left">
-                                        <h5 className="font-semibold text-gray-800">Summer Violet</h5>
-                                        <p className="text-sm text-gray-500">Marketing Juxt Corporate</p>
-                                    </div>
-                                </div>
-                            </div>
                         </Slider>
                     </div>
                 </div>
@@ -406,7 +352,7 @@ const Home = () => {
                         </div>
                         <div className="text-center mt-6">
                             <Link
-                                href="/layanan"
+                                href="/"
                                 className="inline-block border-1 border-[#2e8bc0] border-solid text-[#2e8bc0] text-xl hover:bg-[#2e8bc0] hover:text-white px-6 py-2 rounded-md transition duration-200"
                             >
                                 Mulai Sekarang!

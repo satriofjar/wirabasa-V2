@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ProductController;
+use App\Http\Controllers\Dashboard\TestimonialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LayananContoller;
 use App\Http\Controllers\OrderController;
@@ -29,6 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('order-product', OrderController::class);
     Route::resource('payment', PaymentController::class);
     Route::resource('user', UserProfileContoller::class);
+    Route::resource('testimony', TestimonialController::class);
 });
 
 
