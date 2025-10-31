@@ -17,6 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+        $products->load('category');
         return Inertia::render("dashboard/product/products", [
             'products' => $products,
         ]);
@@ -90,7 +91,7 @@ class ProductController extends Controller
             }
         });
 
-        return redirect()->route('products.index')
+        return redirect()->route('products.create')
             ->with('success', 'Product created successfully.');
     }
 

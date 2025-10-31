@@ -71,6 +71,7 @@ export interface Feature {
 export interface ProductType {
     id: string;
     category_id: string;
+    category: CategoryType;
     name: string;
     price: number;
     discount: number;
@@ -79,14 +80,6 @@ export interface ProductType {
     features: Feature[];
     created_at: Date;
     updated_at: Date;
-}
-
-export interface ProductFormType {
-    category_id: string;
-    name: string;
-    price: number;
-    discount: number;
-    is_active: boolean;
 }
 
 
@@ -103,6 +96,7 @@ export interface OrderType {
     product_id: string;
     product: producttype;
     order_editing: OrderEditingType;
+    course_class: CourseClassType | null;
     status: string;
     payment: PaymentType;
     created_at: date;
@@ -120,14 +114,14 @@ export interface OrderEditingType {
 }
 
 
-export interface CourseClass {
+export interface CourseClassType {
     id: string;
     product_id: string;
     topic: string;
     zoom_link: string;
     yt_link: string;
     schedule: string;
-    poster: File | null;
+    poster: string;
     is_active: boolean;
     created_at: date;
     updated_at: date;

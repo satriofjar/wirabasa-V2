@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignUuid('product_id')->constrained()->onDelete('cascade');
-            $table->enum('status', ['pending', 'paid', 'failed', 'refunded']);
+            $table->enum('status', ['pending', 'processing', 'success', 'failed', 'refund'])->default('pending');
             $table->timestamps();
         });
     }

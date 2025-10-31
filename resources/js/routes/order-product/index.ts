@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\OrderController::create
-* @see app/Http/Controllers/OrderController.php:27
+* @see app/Http/Controllers/OrderController.php:30
 * @route '/order-product/create'
 */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ create.definition = {
 
 /**
 * @see \App\Http\Controllers\OrderController::create
-* @see app/Http/Controllers/OrderController.php:27
+* @see app/Http/Controllers/OrderController.php:30
 * @route '/order-product/create'
 */
 create.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ create.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\OrderController::create
-* @see app/Http/Controllers/OrderController.php:27
+* @see app/Http/Controllers/OrderController.php:30
 * @route '/order-product/create'
 */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -35,7 +35,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\OrderController::create
-* @see app/Http/Controllers/OrderController.php:27
+* @see app/Http/Controllers/OrderController.php:30
 * @route '/order-product/create'
 */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -45,7 +45,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\OrderController::create
-* @see app/Http/Controllers/OrderController.php:27
+* @see app/Http/Controllers/OrderController.php:30
 * @route '/order-product/create'
 */
 const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -55,7 +55,7 @@ const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => 
 
 /**
 * @see \App\Http\Controllers\OrderController::create
-* @see app/Http/Controllers/OrderController.php:27
+* @see app/Http/Controllers/OrderController.php:30
 * @route '/order-product/create'
 */
 createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -65,7 +65,7 @@ createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\OrderController::create
-* @see app/Http/Controllers/OrderController.php:27
+* @see app/Http/Controllers/OrderController.php:30
 * @route '/order-product/create'
 */
 createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -82,7 +82,7 @@ create.form = createForm
 
 /**
 * @see \App\Http\Controllers\OrderController::index
-* @see app/Http/Controllers/OrderController.php:18
+* @see app/Http/Controllers/OrderController.php:21
 * @route '/order-product'
 */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -97,7 +97,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\OrderController::index
-* @see app/Http/Controllers/OrderController.php:18
+* @see app/Http/Controllers/OrderController.php:21
 * @route '/order-product'
 */
 index.url = (options?: RouteQueryOptions) => {
@@ -106,7 +106,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\OrderController::index
-* @see app/Http/Controllers/OrderController.php:18
+* @see app/Http/Controllers/OrderController.php:21
 * @route '/order-product'
 */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -116,7 +116,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\OrderController::index
-* @see app/Http/Controllers/OrderController.php:18
+* @see app/Http/Controllers/OrderController.php:21
 * @route '/order-product'
 */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -126,7 +126,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\OrderController::index
-* @see app/Http/Controllers/OrderController.php:18
+* @see app/Http/Controllers/OrderController.php:21
 * @route '/order-product'
 */
 const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -136,7 +136,7 @@ const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 
 /**
 * @see \App\Http\Controllers\OrderController::index
-* @see app/Http/Controllers/OrderController.php:18
+* @see app/Http/Controllers/OrderController.php:21
 * @route '/order-product'
 */
 indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -146,7 +146,7 @@ indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\OrderController::index
-* @see app/Http/Controllers/OrderController.php:18
+* @see app/Http/Controllers/OrderController.php:21
 * @route '/order-product'
 */
 indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -163,7 +163,7 @@ index.form = indexForm
 
 /**
 * @see \App\Http\Controllers\OrderController::store
-* @see app/Http/Controllers/OrderController.php:42
+* @see app/Http/Controllers/OrderController.php:45
 * @route '/order-product'
 */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -178,7 +178,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\OrderController::store
-* @see app/Http/Controllers/OrderController.php:42
+* @see app/Http/Controllers/OrderController.php:45
 * @route '/order-product'
 */
 store.url = (options?: RouteQueryOptions) => {
@@ -187,7 +187,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\OrderController::store
-* @see app/Http/Controllers/OrderController.php:42
+* @see app/Http/Controllers/OrderController.php:45
 * @route '/order-product'
 */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -197,7 +197,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
 /**
 * @see \App\Http\Controllers\OrderController::store
-* @see app/Http/Controllers/OrderController.php:42
+* @see app/Http/Controllers/OrderController.php:45
 * @route '/order-product'
 */
 const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -207,7 +207,7 @@ const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => 
 
 /**
 * @see \App\Http\Controllers\OrderController::store
-* @see app/Http/Controllers/OrderController.php:42
+* @see app/Http/Controllers/OrderController.php:45
 * @route '/order-product'
 */
 storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -219,7 +219,7 @@ store.form = storeForm
 
 /**
 * @see \App\Http\Controllers\OrderController::show
-* @see app/Http/Controllers/OrderController.php:81
+* @see app/Http/Controllers/OrderController.php:109
 * @route '/order-product/{order_product}'
 */
 export const show = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -234,7 +234,7 @@ show.definition = {
 
 /**
 * @see \App\Http\Controllers\OrderController::show
-* @see app/Http/Controllers/OrderController.php:81
+* @see app/Http/Controllers/OrderController.php:109
 * @route '/order-product/{order_product}'
 */
 show.url = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -261,7 +261,7 @@ show.url = (args: { order_product: string | number } | [order_product: string | 
 
 /**
 * @see \App\Http\Controllers\OrderController::show
-* @see app/Http/Controllers/OrderController.php:81
+* @see app/Http/Controllers/OrderController.php:109
 * @route '/order-product/{order_product}'
 */
 show.get = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -271,7 +271,7 @@ show.get = (args: { order_product: string | number } | [order_product: string | 
 
 /**
 * @see \App\Http\Controllers\OrderController::show
-* @see app/Http/Controllers/OrderController.php:81
+* @see app/Http/Controllers/OrderController.php:109
 * @route '/order-product/{order_product}'
 */
 show.head = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -281,7 +281,7 @@ show.head = (args: { order_product: string | number } | [order_product: string |
 
 /**
 * @see \App\Http\Controllers\OrderController::show
-* @see app/Http/Controllers/OrderController.php:81
+* @see app/Http/Controllers/OrderController.php:109
 * @route '/order-product/{order_product}'
 */
 const showForm = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -291,7 +291,7 @@ const showForm = (args: { order_product: string | number } | [order_product: str
 
 /**
 * @see \App\Http\Controllers\OrderController::show
-* @see app/Http/Controllers/OrderController.php:81
+* @see app/Http/Controllers/OrderController.php:109
 * @route '/order-product/{order_product}'
 */
 showForm.get = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -301,7 +301,7 @@ showForm.get = (args: { order_product: string | number } | [order_product: strin
 
 /**
 * @see \App\Http\Controllers\OrderController::show
-* @see app/Http/Controllers/OrderController.php:81
+* @see app/Http/Controllers/OrderController.php:109
 * @route '/order-product/{order_product}'
 */
 showForm.head = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -318,7 +318,7 @@ show.form = showForm
 
 /**
 * @see \App\Http\Controllers\OrderController::edit
-* @see app/Http/Controllers/OrderController.php:86
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}/edit'
 */
 export const edit = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -333,7 +333,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\OrderController::edit
-* @see app/Http/Controllers/OrderController.php:86
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}/edit'
 */
 edit.url = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -360,7 +360,7 @@ edit.url = (args: { order_product: string | number } | [order_product: string | 
 
 /**
 * @see \App\Http\Controllers\OrderController::edit
-* @see app/Http/Controllers/OrderController.php:86
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}/edit'
 */
 edit.get = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -370,7 +370,7 @@ edit.get = (args: { order_product: string | number } | [order_product: string | 
 
 /**
 * @see \App\Http\Controllers\OrderController::edit
-* @see app/Http/Controllers/OrderController.php:86
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}/edit'
 */
 edit.head = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -380,7 +380,7 @@ edit.head = (args: { order_product: string | number } | [order_product: string |
 
 /**
 * @see \App\Http\Controllers\OrderController::edit
-* @see app/Http/Controllers/OrderController.php:86
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}/edit'
 */
 const editForm = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -390,7 +390,7 @@ const editForm = (args: { order_product: string | number } | [order_product: str
 
 /**
 * @see \App\Http\Controllers\OrderController::edit
-* @see app/Http/Controllers/OrderController.php:86
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}/edit'
 */
 editForm.get = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -400,7 +400,7 @@ editForm.get = (args: { order_product: string | number } | [order_product: strin
 
 /**
 * @see \App\Http\Controllers\OrderController::edit
-* @see app/Http/Controllers/OrderController.php:86
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}/edit'
 */
 editForm.head = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -417,7 +417,7 @@ edit.form = editForm
 
 /**
 * @see \App\Http\Controllers\OrderController::update
-* @see app/Http/Controllers/OrderController.php:94
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}'
 */
 export const update = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -432,7 +432,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\OrderController::update
-* @see app/Http/Controllers/OrderController.php:94
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}'
 */
 update.url = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -459,7 +459,7 @@ update.url = (args: { order_product: string | number } | [order_product: string 
 
 /**
 * @see \App\Http\Controllers\OrderController::update
-* @see app/Http/Controllers/OrderController.php:94
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}'
 */
 update.put = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -469,7 +469,7 @@ update.put = (args: { order_product: string | number } | [order_product: string 
 
 /**
 * @see \App\Http\Controllers\OrderController::update
-* @see app/Http/Controllers/OrderController.php:94
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}'
 */
 update.patch = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
@@ -479,7 +479,7 @@ update.patch = (args: { order_product: string | number } | [order_product: strin
 
 /**
 * @see \App\Http\Controllers\OrderController::update
-* @see app/Http/Controllers/OrderController.php:94
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}'
 */
 const updateForm = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -494,7 +494,7 @@ const updateForm = (args: { order_product: string | number } | [order_product: s
 
 /**
 * @see \App\Http\Controllers\OrderController::update
-* @see app/Http/Controllers/OrderController.php:94
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}'
 */
 updateForm.put = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -509,7 +509,7 @@ updateForm.put = (args: { order_product: string | number } | [order_product: str
 
 /**
 * @see \App\Http\Controllers\OrderController::update
-* @see app/Http/Controllers/OrderController.php:94
+* @see app/Http/Controllers/OrderController.php:0
 * @route '/order-product/{order_product}'
 */
 updateForm.patch = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -526,7 +526,7 @@ update.form = updateForm
 
 /**
 * @see \App\Http\Controllers\OrderController::destroy
-* @see app/Http/Controllers/OrderController.php:102
+* @see app/Http/Controllers/OrderController.php:113
 * @route '/order-product/{order_product}'
 */
 export const destroy = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -541,7 +541,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\OrderController::destroy
-* @see app/Http/Controllers/OrderController.php:102
+* @see app/Http/Controllers/OrderController.php:113
 * @route '/order-product/{order_product}'
 */
 destroy.url = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -568,7 +568,7 @@ destroy.url = (args: { order_product: string | number } | [order_product: string
 
 /**
 * @see \App\Http\Controllers\OrderController::destroy
-* @see app/Http/Controllers/OrderController.php:102
+* @see app/Http/Controllers/OrderController.php:113
 * @route '/order-product/{order_product}'
 */
 destroy.delete = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -578,7 +578,7 @@ destroy.delete = (args: { order_product: string | number } | [order_product: str
 
 /**
 * @see \App\Http\Controllers\OrderController::destroy
-* @see app/Http/Controllers/OrderController.php:102
+* @see app/Http/Controllers/OrderController.php:113
 * @route '/order-product/{order_product}'
 */
 const destroyForm = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -593,7 +593,7 @@ const destroyForm = (args: { order_product: string | number } | [order_product: 
 
 /**
 * @see \App\Http\Controllers\OrderController::destroy
-* @see app/Http/Controllers/OrderController.php:102
+* @see app/Http/Controllers/OrderController.php:113
 * @route '/order-product/{order_product}'
 */
 destroyForm.delete = (args: { order_product: string | number } | [order_product: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

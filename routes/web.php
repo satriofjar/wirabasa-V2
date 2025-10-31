@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AdminAuthenticationController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\TestimonialController;
@@ -16,8 +17,7 @@ Route::get('/layanan', [LayananContoller::class, 'index'])->name('layanan');
 Route::get('/order-product/create', [OrderController::class, 'create'])->name('order-product');
 
 
-
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', function () {
             return Inertia::render('dashboard');
@@ -25,12 +25,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::resource('categories', CategoryController::class);
         Route::resource('products', ProductController::class);
+        Route::resource('testimony', TestimonialController::class);
     });
+});
+
+Route::middleware(['auth'])->group(function () {
 
     Route::resource('order-product', OrderController::class);
     Route::resource('payment', PaymentController::class);
     Route::resource('user', UserProfileContoller::class);
-    Route::resource('testimony', TestimonialController::class);
 });
 
 

@@ -37,7 +37,7 @@ class UserProfileContoller extends Controller
      */
     public function show(string $id)
     {
-        $user = User::with('orders.product', 'orders.orderEditing', 'orders.payment')->findOrFail($id);
+        $user = User::with('orders.product.courseClass', 'orders.orderEditing', 'orders.payment')->findOrFail($id);
         return Inertia::render('profile', [
             'user'=> $user,
         ]);

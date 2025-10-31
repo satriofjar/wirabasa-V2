@@ -472,6 +472,87 @@ loginForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 login.form = loginForm
 
 /**
+* @see \App\Http\Controllers\Auth\AdminAuthenticationController::loginAdmin
+* @see app/Http/Controllers/Auth/AdminAuthenticationController.php:16
+* @route '/login-admin'
+*/
+export const loginAdmin = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: loginAdmin.url(options),
+    method: 'get',
+})
+
+loginAdmin.definition = {
+    methods: ["get","head"],
+    url: '/login-admin',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Auth\AdminAuthenticationController::loginAdmin
+* @see app/Http/Controllers/Auth/AdminAuthenticationController.php:16
+* @route '/login-admin'
+*/
+loginAdmin.url = (options?: RouteQueryOptions) => {
+    return loginAdmin.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Auth\AdminAuthenticationController::loginAdmin
+* @see app/Http/Controllers/Auth/AdminAuthenticationController.php:16
+* @route '/login-admin'
+*/
+loginAdmin.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: loginAdmin.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Auth\AdminAuthenticationController::loginAdmin
+* @see app/Http/Controllers/Auth/AdminAuthenticationController.php:16
+* @route '/login-admin'
+*/
+loginAdmin.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: loginAdmin.url(options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\Auth\AdminAuthenticationController::loginAdmin
+* @see app/Http/Controllers/Auth/AdminAuthenticationController.php:16
+* @route '/login-admin'
+*/
+const loginAdminForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: loginAdmin.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Auth\AdminAuthenticationController::loginAdmin
+* @see app/Http/Controllers/Auth/AdminAuthenticationController.php:16
+* @route '/login-admin'
+*/
+loginAdminForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: loginAdmin.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Auth\AdminAuthenticationController::loginAdmin
+* @see app/Http/Controllers/Auth/AdminAuthenticationController.php:16
+* @route '/login-admin'
+*/
+loginAdminForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: loginAdmin.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+loginAdmin.form = loginAdminForm
+
+/**
 * @see \App\Http\Controllers\Auth\AuthenticatedSessionController::logout
 * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:43
 * @route '/logout'

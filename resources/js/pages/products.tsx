@@ -51,7 +51,7 @@ const Products = ({ categories }: { categories: CategoresProductsType[] }) => {
                 {categories.map((category, index) => (
                     category.products.length !== 0 &&
                     <div key={index} className="my-5">
-                        <h2 className="text-black text-2xl font-bold">{category.name}</h2>
+                        <h2 id={category.slug} className="text-black text-2xl font-bold">{category.name}</h2>
                         <p className="text-gray-800 text-lg">{category.description}</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 

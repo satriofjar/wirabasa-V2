@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::index
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:15
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/testimony',
+    url: '/dashboard/testimony',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::index
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:15
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::index
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:15
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -36,7 +36,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::index
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:15
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -46,7 +46,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::index
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:15
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url(options),
@@ -56,7 +56,7 @@ const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::index
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:15
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url(options),
@@ -66,7 +66,7 @@ indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::index
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:15
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url({
@@ -83,7 +83,7 @@ index.form = indexForm
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::create
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:26
-* @route '/testimony/create'
+* @route '/dashboard/testimony/create'
 */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -92,13 +92,13 @@ export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => (
 
 create.definition = {
     methods: ["get","head"],
-    url: '/testimony/create',
+    url: '/dashboard/testimony/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::create
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:26
-* @route '/testimony/create'
+* @route '/dashboard/testimony/create'
 */
 create.url = (options?: RouteQueryOptions) => {
     return create.definition.url + queryParams(options)
@@ -107,7 +107,7 @@ create.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::create
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:26
-* @route '/testimony/create'
+* @route '/dashboard/testimony/create'
 */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -117,7 +117,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::create
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:26
-* @route '/testimony/create'
+* @route '/dashboard/testimony/create'
 */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: create.url(options),
@@ -127,7 +127,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::create
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:26
-* @route '/testimony/create'
+* @route '/dashboard/testimony/create'
 */
 const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: create.url(options),
@@ -137,7 +137,7 @@ const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::create
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:26
-* @route '/testimony/create'
+* @route '/dashboard/testimony/create'
 */
 createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: create.url(options),
@@ -147,7 +147,7 @@ createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::create
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:26
-* @route '/testimony/create'
+* @route '/dashboard/testimony/create'
 */
 createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: create.url({
@@ -164,7 +164,7 @@ create.form = createForm
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::store
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:34
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -173,13 +173,13 @@ export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => (
 
 store.definition = {
     methods: ["post"],
-    url: '/testimony',
+    url: '/dashboard/testimony',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::store
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:34
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 store.url = (options?: RouteQueryOptions) => {
     return store.definition.url + queryParams(options)
@@ -188,7 +188,7 @@ store.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::store
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:34
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -198,7 +198,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::store
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:34
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: store.url(options),
@@ -208,7 +208,7 @@ const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::store
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:34
-* @route '/testimony'
+* @route '/dashboard/testimony'
 */
 storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: store.url(options),
@@ -220,7 +220,7 @@ store.form = storeForm
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::show
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:49
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 export const show = (args: { testimony: string | number } | [testimony: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
@@ -229,13 +229,13 @@ export const show = (args: { testimony: string | number } | [testimony: string |
 
 show.definition = {
     methods: ["get","head"],
-    url: '/testimony/{testimony}',
+    url: '/dashboard/testimony/{testimony}',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::show
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:49
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 show.url = (args: { testimony: string | number } | [testimony: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -262,7 +262,7 @@ show.url = (args: { testimony: string | number } | [testimony: string | number ]
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::show
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:49
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 show.get = (args: { testimony: string | number } | [testimony: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
@@ -272,7 +272,7 @@ show.get = (args: { testimony: string | number } | [testimony: string | number ]
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::show
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:49
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 show.head = (args: { testimony: string | number } | [testimony: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
@@ -282,7 +282,7 @@ show.head = (args: { testimony: string | number } | [testimony: string | number 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::show
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:49
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 const showForm = (args: { testimony: string | number } | [testimony: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, options),
@@ -292,7 +292,7 @@ const showForm = (args: { testimony: string | number } | [testimony: string | nu
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::show
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:49
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 showForm.get = (args: { testimony: string | number } | [testimony: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, options),
@@ -302,7 +302,7 @@ showForm.get = (args: { testimony: string | number } | [testimony: string | numb
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::show
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:49
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 showForm.head = (args: { testimony: string | number } | [testimony: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, {
@@ -319,7 +319,7 @@ show.form = showForm
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::edit
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:57
-* @route '/testimony/{testimony}/edit'
+* @route '/dashboard/testimony/{testimony}/edit'
 */
 export const edit = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -328,13 +328,13 @@ export const edit = (args: { testimony: string | { id: string } } | [testimony: 
 
 edit.definition = {
     methods: ["get","head"],
-    url: '/testimony/{testimony}/edit',
+    url: '/dashboard/testimony/{testimony}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::edit
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:57
-* @route '/testimony/{testimony}/edit'
+* @route '/dashboard/testimony/{testimony}/edit'
 */
 edit.url = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -367,7 +367,7 @@ edit.url = (args: { testimony: string | { id: string } } | [testimony: string | 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::edit
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:57
-* @route '/testimony/{testimony}/edit'
+* @route '/dashboard/testimony/{testimony}/edit'
 */
 edit.get = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -377,7 +377,7 @@ edit.get = (args: { testimony: string | { id: string } } | [testimony: string | 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::edit
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:57
-* @route '/testimony/{testimony}/edit'
+* @route '/dashboard/testimony/{testimony}/edit'
 */
 edit.head = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
@@ -387,7 +387,7 @@ edit.head = (args: { testimony: string | { id: string } } | [testimony: string |
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::edit
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:57
-* @route '/testimony/{testimony}/edit'
+* @route '/dashboard/testimony/{testimony}/edit'
 */
 const editForm = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: edit.url(args, options),
@@ -397,7 +397,7 @@ const editForm = (args: { testimony: string | { id: string } } | [testimony: str
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::edit
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:57
-* @route '/testimony/{testimony}/edit'
+* @route '/dashboard/testimony/{testimony}/edit'
 */
 editForm.get = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: edit.url(args, options),
@@ -407,7 +407,7 @@ editForm.get = (args: { testimony: string | { id: string } } | [testimony: strin
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::edit
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:57
-* @route '/testimony/{testimony}/edit'
+* @route '/dashboard/testimony/{testimony}/edit'
 */
 editForm.head = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: edit.url(args, {
@@ -424,7 +424,7 @@ edit.form = editForm
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::update
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:67
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 export const update = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
@@ -433,13 +433,13 @@ export const update = (args: { testimony: string | { id: string } } | [testimony
 
 update.definition = {
     methods: ["put","patch"],
-    url: '/testimony/{testimony}',
+    url: '/dashboard/testimony/{testimony}',
 } satisfies RouteDefinition<["put","patch"]>
 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::update
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:67
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 update.url = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -472,7 +472,7 @@ update.url = (args: { testimony: string | { id: string } } | [testimony: string 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::update
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:67
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 update.put = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
@@ -482,7 +482,7 @@ update.put = (args: { testimony: string | { id: string } } | [testimony: string 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::update
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:67
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 update.patch = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
     url: update.url(args, options),
@@ -492,7 +492,7 @@ update.patch = (args: { testimony: string | { id: string } } | [testimony: strin
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::update
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:67
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 const updateForm = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: update.url(args, {
@@ -507,7 +507,7 @@ const updateForm = (args: { testimony: string | { id: string } } | [testimony: s
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::update
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:67
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 updateForm.put = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: update.url(args, {
@@ -522,7 +522,7 @@ updateForm.put = (args: { testimony: string | { id: string } } | [testimony: str
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::update
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:67
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 updateForm.patch = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: update.url(args, {
@@ -539,7 +539,7 @@ update.form = updateForm
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::destroy
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:82
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 export const destroy = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
@@ -548,13 +548,13 @@ export const destroy = (args: { testimony: string | { id: string } } | [testimon
 
 destroy.definition = {
     methods: ["delete"],
-    url: '/testimony/{testimony}',
+    url: '/dashboard/testimony/{testimony}',
 } satisfies RouteDefinition<["delete"]>
 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::destroy
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:82
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 destroy.url = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -587,7 +587,7 @@ destroy.url = (args: { testimony: string | { id: string } } | [testimony: string
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::destroy
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:82
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 destroy.delete = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
@@ -597,7 +597,7 @@ destroy.delete = (args: { testimony: string | { id: string } } | [testimony: str
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::destroy
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:82
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 const destroyForm = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: destroy.url(args, {
@@ -612,7 +612,7 @@ const destroyForm = (args: { testimony: string | { id: string } } | [testimony: 
 /**
 * @see \App\Http\Controllers\Dashboard\TestimonialController::destroy
 * @see app/Http/Controllers/Dashboard/TestimonialController.php:82
-* @route '/testimony/{testimony}'
+* @route '/dashboard/testimony/{testimony}'
 */
 destroyForm.delete = (args: { testimony: string | { id: string } } | [testimony: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: destroy.url(args, {

@@ -1,6 +1,6 @@
 import React from "react"
 import { store, update } from "@/routes/products"
-import { CourseClass, ProductType, CategoryType } from "@/types/index"
+import { CourseClassType, ProductType, CategoryType } from "@/types/index"
 import { useForm, usePage } from "@inertiajs/react"
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,7 +10,7 @@ import { formatDateTimeLocal } from "@/lib/utils";
 interface ProductFormProps {
     productData?: ProductType;
     categories: CategoryType[];
-    courseClass?: CourseClass;
+    courseClass?: CourseClassType;
 }
 
 const ProductForm = ({ productData, categories, courseClass }: ProductFormProps) => {

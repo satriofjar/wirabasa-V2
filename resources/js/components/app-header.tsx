@@ -15,11 +15,29 @@ import { Link, usePage } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-react';
 import AppLogo from './app-logo';
 import AppLogoIcon from './app-logo-icon';
+import { index as categories } from '@/routes/categories';
+import { index as products } from '@/routes/products';
+import { index as testimony } from "@/routes/testimony";
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Categories',
+        href: categories(),
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Products',
+        href: products(),
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Testimonies',
+        href: testimony(),
         icon: LayoutGrid,
     },
 ];

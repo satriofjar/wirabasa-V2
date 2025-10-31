@@ -8,9 +8,7 @@ class Payment extends BaseModel
 {
     protected $fillable = [
         'order_id',
-        'method',
         'amount',
-        'proof',
         'status',
         'transaction_id',
     ];

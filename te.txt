@@ -1,1 +1,7 @@
-membuat user role => is_admin and user biasa
+benahi table database
+sudah mengubah pilihan status order dan payment => belun diterapkan ke database(migrate)
+membuat kelas yang diikuti user
+
+baru
+mengubah transaction_id menjadi snap token
+handle pay success

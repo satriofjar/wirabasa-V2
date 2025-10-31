@@ -15,10 +15,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('order_id')->constrained()->onDelete('cascade');
             $table->bigInteger('amount');
-            $table->string('proof')->nullable(); // bukti transfer / receipt file
-            $table->enum('method', ['manual_transfer', 'va_bca', 'va_bni', 'gopay', 'ovo'])->default('manual_transfer');
-            $table->enum('status', ['pending', 'success', 'failed'])->default('pending');
-            $table->string('transaction_id', 100)->nullable(); // id dari payment gateway
+            $table->enum('status', ['pending', 'paid', 'failed', 'refund'])->default('pending');
+            $table->string('transaction_id', 100)->nullable();
             $table->timestamps();
         });
     }

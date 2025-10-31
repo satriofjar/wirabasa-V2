@@ -1,9 +1,11 @@
 
 import { useEffect, useState } from "react";
-import { Link, usePage } from "@inertiajs/react";
+import { Link, router, usePage } from "@inertiajs/react";
 import IconNav from "@/../assets/LogoNav.png"
 import { Auth } from "@/types";
 import { show } from "@/routes/user";
+import { logout } from "@/routes";
+import { useMobileNavigation } from "@/hooks/use-mobile-navigation";
 
 const navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -18,6 +20,12 @@ const navbar = () => {
         { to: "/layanan", label: "Layanan" },
         { to: "/about", label: "Tentang Kami" },
     ];
+
+    const cleanup = useMobileNavigation();
+    const handleLogout = () => {
+        cleanup();
+        router.flushAll();
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -62,40 +70,52 @@ const navbar = () => {
                 </div>
 
                 {/* Tombol Login & Sign Up */}
-                {url.split('/')[1] != 'user' && (
-                    auth.user ?
-                        <div className="hidden md:flex items-center gap-4">
-                            <Link
-                                href={show(auth.user.id)}
-                                className={`px-5 py-1 rounded-sm text-xl font-medium transition-colors duration-200 hover:border-[#007bff70] hover:bg-[#007bff70] hover:text-white ${scrolled || url !== "/"
-                                    ? "text-blue-600 hover:text-blue-800"
-                                    : "text-white hover:text-blue-200"
-                                    }`}
-                            >
-                                {auth?.user.name}
-                            </Link>
-                        </div> :
-                        <div className="hidden md:flex items-center gap-4">
-                            <Link
-                                href="/login"
-                                className={`px-5 py-1 rounded-sm text-xl font-medium transition-colors duration-200 hover:border-[#007bff70] hover:bg-[#007bff70] hover:text-white ${scrolled || url !== "/"
-                                    ? "text-blue-600 hover:text-blue-800"
-                                    : "text-white hover:text-blue-200"
-                                    }`}
-                            >
-                                Login
-                            </Link>
-                            <Link
-                                href="/register"
-                                className={`px-4 py-1 rounded-sm text-xl font-medium border transition-colors duration-200 ${scrolled || url !== "/"
-                                    ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                                    : "border-white text-white hover:bg-white hover:text-blue-600"
-                                    }`}
-                            >
-                                Sign Up
-                            </Link>
-                        </div>
-                )}
+                {url.split('/')[1] == 'user' ?
+                    <div className="hidden md:flex items-center gap-4">
+                        <Link
+                            href={logout()}
+                            onClick={handleLogout}
+                            className={`px-4 py-1 rounded-sm text-xl font-medium border transition-colors duration-200 ${scrolled || url !== "/"
+                                ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                                : "border-white text-white hover:bg-white hover:text-blue-600"
+                                }`}
+                        >
+                            Logout
+                        </Link>
+                    </div> : (
+                        auth.user ?
+                            <div className="hidden md:flex items-center gap-4">
+                                <Link
+                                    href={show(auth.user.id)}
+                                    className={`px-5 py-1 rounded-sm text-xl font-medium transition-colors duration-200 hover:border-[#007bff70] hover:bg-[#007bff70] hover:text-white ${scrolled || url !== "/"
+                                        ? "text-blue-600 hover:text-blue-800"
+                                        : "text-white hover:text-blue-200"
+                                        }`}
+                                >
+                                    {auth?.user.name}
+                                </Link>
+                            </div> :
+                            <div className="hidden md:flex items-center gap-4">
+                                <Link
+                                    href="/login"
+                                    className={`px-5 py-1 rounded-sm text-xl font-medium transition-colors duration-200 hover:border-[#007bff70] hover:bg-[#007bff70] hover:text-white ${scrolled || url !== "/"
+                                        ? "text-blue-600 hover:text-blue-800"
+                                        : "text-white hover:text-blue-200"
+                                        }`}
+                                >
+                                    Login
+                                </Link>
+                                <Link
+                                    href="/register"
+                                    className={`px-4 py-1 rounded-sm text-xl font-medium border transition-colors duration-200 ${scrolled || url !== "/"
+                                        ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                                        : "border-white text-white hover:bg-white hover:text-blue-600"
+                                        }`}
+                                >
+                                    Sign Up
+                                </Link>
+                            </div>
+                    )}
 
                 {/* Mobile Hamburger */}
                 <div className="md:hidden flex items-center">

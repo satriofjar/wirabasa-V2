@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderEditing;
+use App\Models\Payment;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+
+use function Termwind\render;
 
 class OrderController extends Controller
 {
@@ -45,18 +48,19 @@ class OrderController extends Controller
             'user_id'    => 'required|exists:users,id',
             'product_id' => 'required|exists:products,id',
             'category'   => 'required|string|max:50',
-            'status'     => 'required|string|in:pending,paid,cancelled', // enum lebih aman
             'pages'      => 'nullable|integer|min:0',
         ]);
+
 
         return DB::transaction(function () use ($validated) {
             $order = Order::create([
                 'user_id'    => $validated['user_id'],
                 'product_id' => $validated['product_id'],
-                'status'     => $validated['status'],
             ]);
 
-            // Cari category by slug
+            $product = Product::findOrFail($validated['product_id']);
+            $amount = $product->final_price;
+
             $category = strtolower($validated['category']);
             if ($category === 'jasa-sunting') {
                 if (!isset($validated['pages'])) {
@@ -67,40 +71,52 @@ class OrderController extends Controller
                     'order_id' => $order->id,
                     'pages'    => $validated['pages'],
                 ]);
+
+                $amount *= $validated['pages'];
             }
 
-            return redirect()->route('payment.create', [
-                'orderId' => $order->id,
+            // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = config('midtrans.serverKey');
+            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+            \Midtrans\Config::$isProduction = false;
+            // Set sanitization on (default)
+            \Midtrans\Config::$isSanitized = true;
+            // Set 3DS transaction for credit card to true
+            \Midtrans\Config::$is3ds = false;
+
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => $order->id,
+                    'gross_amount' => $amount,
+                )
+            );
+
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+            Payment::create([
+                'order_id' => $order->id,
+                'amount' => $amount,
+                'transaction_id' => $snapToken,
+            ]);
+
+            return response()->json([
+                'token' => $snapToken,
+                'order_id' => $order->id,
             ]);
         });
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product) {}
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function show(string $order_id)
     {
-        //
+        return Inertia::render("paymentSuccess");
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(string $order_id)
     {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $order = Order::findOrFail($order_id);
+        $order->delete();
+        return response()->json([
+            'message' => 'order deleted successfully',
+        ]);
     }
 }

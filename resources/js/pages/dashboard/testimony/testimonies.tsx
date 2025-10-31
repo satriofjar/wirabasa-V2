@@ -23,7 +23,7 @@ const Testimonies = ({ testimonies }: { testimonies: TestimoniesType[] }) => {
         <AppLayout breadcrumbs={breadcrumbs}>
             <div className="mx-5">
 
-                <Head title="Categories" />
+                <Head title="Testimonies" />
                 <Link href={createTestimony()} type="button" className="text-white text-center w-30 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 my-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Create
                 </Link>

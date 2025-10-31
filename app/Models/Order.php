@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
 class Order extends BaseModel
 {
@@ -27,9 +26,9 @@ class Order extends BaseModel
         return $this->hasOne(Payment::class);
     }
 
-    // relasi tambahan
     public function orderEditing()
     {
         return $this->hasOne(OrderEditing::class);
     }
+
 }
