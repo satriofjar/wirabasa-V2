@@ -61,7 +61,7 @@ const OrderProduct = ({ product, category }: OrderProductProps) => {
             ?.split('=')[1];
 
         try {
-            const response = await fetch(API_URL + '/order-product/', {
+            const response = await fetch(API_URL + '/order-product', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -106,6 +106,7 @@ const OrderProduct = ({ product, category }: OrderProductProps) => {
                         credentials: 'include',
                         headers: {
                             'Content-Type': 'application/json',
+                            'Accept': 'application/json',
                             'X-XSRF-TOKEN': decodeURIComponent(token || ''),
                         },
                     })
