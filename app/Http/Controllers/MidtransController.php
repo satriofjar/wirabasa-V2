@@ -16,7 +16,11 @@ class MidtransController extends Controller
             return response()->json(['message' => 'invalid signature'], 403);
         }
 
-        $order = Order::with('payment', 'product.category')->findOrFail($request->order_id);
+        $order = Order::with('payment', 'product.category')->find($request->order_id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
 
         switch ($request->transaction_status) {
             case 'settlement':
@@ -27,13 +31,15 @@ class MidtransController extends Controller
                     $order->update(['status' => 'success']);
                 }
                 $order->payment->update(['status' => 'paid']);
+                break;
             case 'deny':
                 $order->status->update(['status' => 'failed']);
-                $order->payment->update(['status' => 'falied']);
+                $order->payment->update(['status' => 'failed']);
+                break;
             case 'refund':
-                $order->status->update(['status' => 'refund']);
+                $order->update(['status' => 'failed']);
                 $order->payment->update(['status' => 'refund']);
-
+                break;
         }
 
         $order->payment->update(["transaction_id" => $request->transaction_id]);

@@ -16,7 +16,7 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/layanan', [LayananContoller::class, 'index'])->name('layanan');
 Route::get('/order-product/create', [OrderController::class, 'create'])->name('order-product');
-Route::get('/midtrans/payment-notification', [MidtransController::class, 'handleNotification']);
+Route::post('/midtrans/payment-notification', [MidtransController::class, 'handleNotification']);
 
 
 Route::middleware(['admin'])->group(function () {
